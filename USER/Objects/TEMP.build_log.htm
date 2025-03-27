@@ -1,0 +1,87 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.40.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: a a, a, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.40.0.3
+Toolchain Path:  C:\Keil5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.22
+Assembler:       Armasm.exe V6.22
+Linker/Locator:  ArmLink.exe V6.22
+Library Manager: ArmAr.exe V6.22
+Hex Converter:   FromElf.exe V6.22
+CPU DLL:         SARMCM3.DLL V5.40.0.3
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\000\USER\temp.uvprojx
+Project File Date:  10/29/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.22', folder: 'C:\Keil5\ARM\ARMCLANG\Bin'
+Build target 'TEMP'
+../SYSTEM/usart/usart.c(16): error: '#pragma import' is an Arm Compiler 5 extension, and is not supported by Arm Compiler for Embedded 6 [-Warmcc-pragma-import]
+   16 | #pragma import(__use_no_semihosting)             
+      |         ^
+../SYSTEM/usart/usart.c(18): error: redefinition of '__FILE'
+   18 | struct __FILE 
+      |        ^
+C:\Keil5\ARM\ARMCLANG\bin\..\include\stdio.h(119): note: previous definition is here
+  119 | struct __FILE {
+      |        ^
+../SYSTEM/usart/usart.c(26): error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+   26 | _sys_exit(int x) 
+      | ^
+      | int
+../SYSTEM/usart/usart.c(28): warning: explicitly assigning value of variable of type 'int' to itself [-Wself-assign]
+   28 |         x = x; 
+      |         ~ ^ ~
+../SYSTEM/usart/usart.c(33): warning: while loop has empty body [-Wempty-body]
+   33 |         while((USART1->SR&0X40)==0);
+      |                                    ^
+../SYSTEM/usart/usart.c(33): note: put the semicolon on a separate line to silence this warning
+../SYSTEM/usart/usart.c(31): warning: unused parameter 'f' [-Wunused-parameter]
+   31 | int fputc(int ch, FILE *f)
+      |                         ^
+3 warnings and 3 errors generated.
+compiling usart.c...
+../SYSTEM/sys/sys.c(22): error: expected '(' after 'asm'
+   22 | __asm void MSR_MSP(u32 addr) 
+      |       ^
+../SYSTEM/sys/sys.c(22): error: expected ';' after top-level asm block
+   22 | __asm void MSR_MSP(u32 addr) 
+      |      ^
+      |      ;
+../SYSTEM/sys/sys.c(24): error: use of undeclared identifier 'MSR'
+   24 |     MSR MSP, r0                         //set Main Stack value
+      |     ^
+../SYSTEM/sys/sys.c(22): warning: unused parameter 'addr' [-Wunused-parameter]
+   22 | __asm void MSR_MSP(u32 addr) 
+      |                        ^
+1 warning and 3 errors generated.
+compiling sys.c...
+".\Objects\temp.axf" - 6 Error(s), 4 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:/Users/DELL/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
